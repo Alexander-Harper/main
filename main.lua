@@ -56,26 +56,11 @@ function love.update(dt)
     end
 
     if love.keyboard.isDown("right") then
-        player.x = player.x + 5 + player.speed * dt
-        print("Right pressed, new X: " .. math.floor(player.x))
-    end
-    if love.keyboard.isDown("left") then
-        player.x = player.x - 5 - player.speed * dt
-        print("Left pressed, new X: " .. math.floor(player.x))
-    end
-    if love.keyboard.isDown("down") then
-        player.y = player.y + 2 * player.speed * dt
-        print("Down pressed, new Y: " .. math.floor(player.y))
-    end
-
-    if player.x < -400 then
-        player.x = -400
-        print("Clamped X to -400")
-    end
-
-    if camera then
-        camera.x = player.x + player.width / 2 - 400
-        camera.y = player.y + player.height / 2 - 300
+        player.x = player.x + player.speed * dt
+    elseif love.keyboard.isDown("left") then
+        player.x = player.x - player.speed * dt
+    elseif love.keyboard.isDown("down") then
+        player.y = player.y + player.speed * dt
     end
 end
 
