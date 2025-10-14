@@ -1,7 +1,7 @@
 function love.load()
     love.window.setTitle("2D Platformer")
     love.window.setMode(800, 600)
-    love.graphics.setBackgroundColor(0.1, 0.1, 0.1)
+    love.graphics.setBackgroundColor(0.2, 0.5, 0.6)
 
     player = {
         x = 100,
@@ -43,6 +43,8 @@ function love.update(dt)
         player.x = player.x + player.speed * dt
     elseif love.keyboard.isDown("left") then
         player.x = player.x - player.speed * dt
+    elseif love.keyboard.isDown("down") then
+        player.y = player.y + 2 * player.speed * dt 
     end
 end
 
