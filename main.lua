@@ -18,6 +18,8 @@ function love.load()
         onGround = false
     }
 
+    player.image = love.graphics.newImage("sprites/char/guard2.png")
+
     platforms = {
         {x = -500, y = 560, width = 21000, height = 40}
     }
@@ -117,8 +119,10 @@ function love.draw()
         love.graphics.rectangle("fill", p.x, p.y, p.width, p.height)
     end
 
+    love.graphics.draw(player.image, player.x, player.y)
+
     love.graphics.setColor(0, 0.7, 1)
-    love.graphics.rectangle("fill", player.x, player.y, player.width, player.height)
+
 
     love.graphics.pop()
 
