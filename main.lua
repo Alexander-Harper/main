@@ -1,3 +1,5 @@
+-- Comentario
+
 function love.load()
     print("love.load is running")
     love.window.setTitle("2D Platformer")
